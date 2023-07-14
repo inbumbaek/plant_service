@@ -9,3 +9,13 @@ const createNew = (request, response) => {
       response.status(400).json({ err });
     });
 };
+
+const getAll = (request, response) => {
+    Plant.find()
+      .then((all) => {
+        response.json(all);
+      })
+      .catch((err) => {
+        response.status(400).json({ err });
+      });
+  };
