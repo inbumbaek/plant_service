@@ -29,3 +29,16 @@ const getOne = (request, response) => {
       response.status(400).json({ err });
     });
 };
+
+const update = (request, response) => {
+  Plant.findOneAndUpdate({ _id: request.params.id }, request.body, {
+    new: true,
+    runValidators: true,
+  })
+    .then((updated) => {
+      response.json({ updated });
+    })
+    .catch((err) => {
+      response.status(400).json({ err });
+    });
+};
