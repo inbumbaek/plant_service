@@ -42,3 +42,15 @@ const update = (request, response) => {
       response.status(400).json({ err });
     });
 };
+
+const destroy = (request, response) => {
+  Plant.deleteOne({ _id: request.params.id })
+    .then((destroy) => {
+      response.json({ destroy });
+    })
+    .catch((err) => {
+      response.status(400).json({ err });
+    });
+};
+
+module.exports = { createNew, getAll, getOne, update, destroy };
