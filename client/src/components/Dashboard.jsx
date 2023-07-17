@@ -16,3 +16,15 @@ const Dashboard = () => {
       })
       .catch((err) => {});
   }, []);
+
+  const handleDelete = (idFromBelow) => {
+    axios
+      .delete(`http://localhost:8000/api/plant/${idFromBelow}`)
+      .then((response) => {
+        const updatedPlants = allPlants.filter(
+          (plant) => plant._id !== idFromBelow
+        );
+        setAllPlants(updatedPlants);
+      })
+      .catch((err) => {});
+  };
