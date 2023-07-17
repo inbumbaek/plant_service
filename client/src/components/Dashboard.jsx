@@ -28,3 +28,13 @@ const Dashboard = () => {
       })
       .catch((err) => {});
   };
+
+  const logout = () => {
+    axios.post('http://localhost:8000/api/logout', {}, {withCredentials:true})
+    .then((res) => {
+        navigate('/')
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+}
