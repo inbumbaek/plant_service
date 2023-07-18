@@ -62,3 +62,51 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+        {/* ------------------------TABLE---------------------------------- */}
+        <table className="table table-bordered table-hover mt-3">
+          <thead>
+            <tr>
+              <th>Plants</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {allPlants.map((plant, index) => {
+              return (
+                <tr key={plant._id}>
+                  <td>
+                    <img
+                      src="../images/PlantIcon1.png"
+                      alt="Plant Icon"
+                      style={{ width: "40px", height: "40px" }}
+                    />{" "}
+                    {plant.name}
+                  </td>
+                  <td>${plant.price.toFixed(2)}</td>
+                  <td>
+                    <a href={`/plant/${plant._id}`}>
+                      <img
+                        src="../images/Info.png"
+                        alt="Clickable Image"
+                        style={{ width: "40px", height: "40px" }}
+                      />
+                    </a>
+                    <Link
+                      className="button-62"
+                      onClick={() => handleDelete(plant._id)}
+                      style={{ marginRight: "10px" }}
+                    >
+                      Buy Plant
+                    </Link>
+
+                    <Link to={`/plant/${plant._id}/edit`} className="button-62">
+                      Edit
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
