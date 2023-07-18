@@ -38,3 +38,27 @@ const Dashboard = () => {
         console.log(err);
     })
 }
+
+  return (
+    <div className="dashboard-container">
+      <div className="dashboard">
+        {/* --------------------NAV BAR--------------------------------------- */}
+
+        <div className="navBar-welcome">
+          <div className="img-welcome">
+            <div>
+              <img
+                src="../images/RealPlant1.jpg"
+                alt="Plant Icon"
+                className="DashboardImage"
+              />
+            </div>
+            <div>
+              <h1>Sell your Plants here!</h1>
+              <p>Plant gonna make people Happy.</p>
+              <Link to="/plant/new" className="button-62">
+                Sell your Plant
+              </Link>
+            </div>
+          </div>
+        </div>
