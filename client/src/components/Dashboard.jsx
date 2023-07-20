@@ -163,3 +163,12 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+        {/* ----------CARD---------- */}
+      </div>
+      <br/>
+      <button className="button-62" onClick={logout}>Logout</button>
+    </div>
+  );
+};
+
+export default Dashboard;
