@@ -145,3 +145,21 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+        {/* ----------CARD---------- */}
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <img src="../images/d-1.jpg" />
+
+              <p className="title">Haworthia limifolia Marloth</p>
+              <p>Flip Me! </p>
+            </div>
+            <div className="flip-card-back">
+              <p>
+                Aristaloe is a genus of evergreen flowering perennial plants in
+                the family Asphodelaceae from Southern Africa. Its sole species
+                is Aristaloe aristata, known as guinea-fowl aloe or lace aloe
+              </p>
+            </div>
+          </div>
+        </div>
