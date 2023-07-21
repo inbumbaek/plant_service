@@ -20,3 +20,20 @@ const FlipCard = () => {
           </div>
         </div>
       </div>
+      {/* ----------CARD---------- */}
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <img src="../images/d-2.jpg" />
+            <p className="title">Cathedral Window Haworthia</p>
+            <p>Flip Me!</p>
+          </div>
+          <div className="flip-card-back">
+            <p>
+              Haworthia cymbiformis is a species of the genus Haworthia in the
+              family Asphodelaceae, endemic to the Eastern Cape Province in
+              South Africa.
+            </p>
+          </div>
+        </div>
+      </div>
