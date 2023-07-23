@@ -55,3 +55,9 @@ const FlipCard = () => {
           </div>
         </div>
       </div>
+      {/* ----------CARD---------- */}
+    </div>
+  );
+};
+
+export default FlipCard;
