@@ -27,3 +27,18 @@ const FlippableCardContainer = () => {
     { frontContent: "Card 5 Front", backContent: "Card 5 Back" },
     { frontContent: "Card 6 Front", backContent: "Card 6 Back" },
   ];
+
+  return (
+    <div className="card-container">
+      {cards.map((card, index) => (
+        <FlippableCard
+          key={index}
+          frontContent={card.frontContent}
+          backContent={card.backContent}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default FlippableCardContainer;
