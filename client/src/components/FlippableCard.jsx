@@ -17,3 +17,13 @@ const FlippableCard = ({ frontContent, backContent }) => {
     </div>
   );
 };
+
+const FlippableCardContainer = () => {
+  const cards = [
+    { frontContent: "Card 1 Front", backContent: "Card 1 Back" },
+    { frontContent: "Card 2 Front", backContent: "Card 2 Back" },
+    { frontContent: "Card 3 Front", backContent: "Card 3 Back" },
+    { frontContent: "Card 4 Front", backContent: "Card 4 Back" },
+    { frontContent: "Card 5 Front", backContent: "Card 5 Back" },
+    { frontContent: "Card 6 Front", backContent: "Card 6 Back" },
+  ];
