@@ -42,3 +42,18 @@ const CreatePlant = () => {
         console.log(err);
     })
 }
+
+return (
+  <div className="show-details-container">
+    <div className="show-details">
+      <div className="navBar">
+        <h1>What Plants are you selling?</h1>
+        <div className="navBar1">
+          <Link className="button-62" to="/dashboard">
+            Home
+          </Link>
+          <button className="button-62" onClick={logout}>Logout</button>
+        </div>
+      </div>
+      <hr />{" "}
+      <form onSubmit={handleSubmit}>
