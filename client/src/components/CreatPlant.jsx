@@ -72,3 +72,23 @@ return (
               <p className="error-message">{errors.name.message}</p>
             ) : null}
           </div>
+          {/* <-------------Lighting-SELECTIONS-----------> */}
+          <div className="mb-3">
+            <label htmlFor="lighting" className="form-label">
+              Cardinal Direction
+            </label>
+            <select
+              className="form-control"
+              onChange={(e) => setLighting(e.target.value)}
+              value={lighting}
+            >
+              <option value="">Select Lighting</option>
+              <option value="South">South</option>
+              <option value="West">West</option>
+              <option value="East">East</option>
+              <option value="North">North</option>
+            </select>
+            {errors.lighting ? (
+              <p className="error-message">{errors.lighting.message}</p>
+            ) : null}
+          </div>
