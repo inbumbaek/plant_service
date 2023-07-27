@@ -57,3 +57,18 @@ return (
       </div>
       <hr />{" "}
       <form onSubmit={handleSubmit}>
+        {/* <-------------PLANT NAME------------> */}
+        <div className="mb-3">
+            <label htmlFor="name" className="form-label">
+              Plant Name
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
+            {errors.name ? (
+              <p className="error-message">{errors.name.message}</p>
+            ) : null}
+          </div>
