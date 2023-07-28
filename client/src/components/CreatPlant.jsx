@@ -92,3 +92,18 @@ return (
               <p className="error-message">{errors.lighting.message}</p>
             ) : null}
           </div>
+          {/* <------------DESCRIPTION-----------> */}
+          <div className="mb-3">
+            <label htmlFor="description" className="form-label">
+              Care Instructions & Info
+            </label>
+            <textarea
+              className="form-control"
+              onChange={(e) => setDescription(e.target.value)}
+              value={description}
+              placeholder="Remember to give your plant the proper care it deserves."
+            />
+            {errors.description ? (
+              <p className="error-message">{errors.description.message}</p>
+            ) : null}
+          </div>
