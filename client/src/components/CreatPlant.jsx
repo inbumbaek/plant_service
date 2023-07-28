@@ -107,3 +107,23 @@ return (
               <p className="error-message">{errors.description.message}</p>
             ) : null}
           </div>
+          {/* <------------PRICE-----------> */}
+          <div className="mb-3">
+            <label htmlFor="price" className="form-label">
+              Sale Price
+            </label>
+            <div className="input-group">
+            <span className="input-group-text">$</span>
+            <input
+              type="number"
+              className="form-control"
+              onChange={(e) => setPrice(e.target.value)}
+              value={price}
+            />
+            </div>
+            {errors.price ? (
+              <p className="error-message">{errors.price.message}</p>
+            ) : null}
+          </div>
+          <br />
+          <hr />
