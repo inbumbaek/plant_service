@@ -157,3 +157,14 @@ return (
               <p className="error-message">{errors.sellerEmail.message}</p>
             ) : null}
           </div>
+          {/* <------------END OF INPUT FORM----------> */}
+          <button type="submit" className="button-62">
+            Sell Plant
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default CreatePlant;
