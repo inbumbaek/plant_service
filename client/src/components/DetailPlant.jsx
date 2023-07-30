@@ -6,3 +6,13 @@ const DetailPlant = (props) => {
   const [plant, setPlant] = useState({});
   const { id } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/plant/" + id)
+      .then((res) => {
+        console.log(res.data);
+        setPlant(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
