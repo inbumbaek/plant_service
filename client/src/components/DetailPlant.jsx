@@ -26,3 +26,21 @@ const DetailPlant = (props) => {
         console.log(err);
     })
 }
+
+return (
+  <div className="show-details-container">
+    <div className="show-details">
+      <div className="navBar">
+        <div className="navBar-PlantName">
+          <div>
+            <img src="../images/PlantIcon1.png" alt="Plant Icon" />
+          </div>
+          <h1 style={{ marginLeft: "10px" }}> {plant.name}</h1>
+        </div>
+        <div className="navBar1">
+          <Link className="button-62" to="/dashboard">
+          Home
+          </Link>
+          <button className="button-62" onClick={logout}>Logout</button>
+        </div>
+      </div>
