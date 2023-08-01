@@ -44,3 +44,35 @@ return (
           <button className="button-62" onClick={logout}>Logout</button>
         </div>
       </div>
+
+      <div>
+          <h5>
+            {" "}
+            <img
+              src="../images/Sun.png"
+              alt="Plant Icon"
+              style={{ width: "40px", height: "40px" }}
+            />{" "}
+            {plant.lighting} | ${plant.price}
+          </h5>
+          <hr />
+          <h5>Care Instructions & Info:</h5>
+          <p>{plant.description}</p>
+          <hr />
+          <h5>Seller's Contact:</h5>
+          <h5 className="show-description">Name: {plant.sellerName}</h5>
+          <h5 className="show-description">Email: {plant.sellerEmail}</h5>
+          <hr />
+          <div className="edit-buttons">
+            <div>
+              <Link to={`/plant/${plant._id}/edit`} className="button-62">
+                Edit
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default DetailPlant;
