@@ -14,3 +14,19 @@ const EditPlant = (props) => {
   const [errors, setErrors] = useState({});
   const [plantNotFound, setPlantNotFound] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/plant/${id}`)
+      .then((response) => {
+        setPlantName(response.data.name);
+        setPlantLighting(response.data.lighting);
+        setPlantDescription(response.data.description);
+        setPlantPrice(response.data.price);
+        setSellerName(response.data.sellerName);
+        setSellerEmail(response.data.sellerEmail);
+      })
+      .catch((err) => {
+        setPlantNotFound(`Plant not found using that ID`);
+      });
+  }, []);
