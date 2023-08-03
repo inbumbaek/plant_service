@@ -50,3 +50,13 @@ const EditPlant = (props) => {
         setErrors(err.response.data.err.errors);
       });
   };
+
+  const logout = () => {
+    axios.post('http://localhost:8000/api/logout', {}, {withCredentials:true})
+    .then((res) => {
+        navigate('/')
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+}
