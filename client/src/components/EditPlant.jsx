@@ -30,3 +30,23 @@ const EditPlant = (props) => {
         setPlantNotFound(`Plant not found using that ID`);
       });
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .put(`http://localhost:8000/api/plant/${id}`, {
+        name: plantName,
+        lighting: plantLighting,
+        description: plantDescription,
+        price: plantPrice,
+        sellerName: sellerName,
+        sellerEmail: sellerEmail,
+      })
+      .then((response) => {
+        navigate("/dashboard");
+      })
+      .catch((err) => {
+        setErrors(err.response.data.err.errors);
+      });
+  };
