@@ -60,3 +60,24 @@ const EditPlant = (props) => {
         console.log(err);
     })
 }
+
+return (
+  <div className="show-details-container">
+    <div className="show-details">
+      <div className="navBar">
+        <h1>{plantName}</h1>
+        <div className="navBar1">
+          <Link className="button-62" to="/dashboard">
+          Home
+        </Link>
+        <button className="button-62" onClick={logout}>Logout</button>
+        </div>
+      </div>
+      <form onSubmit={handleSubmit}>
+        {plantNotFound ? (
+          <p>
+            {plantNotFound} <Link to="/plant/sell">Sell a Plant?</Link>
+          </p>
+        ) : null}
+        <div className="bodyBox">
+          <div>
