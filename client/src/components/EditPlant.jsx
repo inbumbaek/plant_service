@@ -81,3 +81,20 @@ return (
         ) : null}
         <div className="bodyBox">
           <div>
+
+            {/* <-------------PLANT NAME------------> */}
+
+            <div className="mb-3">
+                <label htmlFor="name" className="form-label">
+                  Plant Name
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  onChange={(e) => setPlantName(e.target.value)}
+                  value={plantName}
+                />
+                {errors.name ? (
+                  <p className="error-message">{errors.name.message}</p>
+                ) : null}
+              </div>
