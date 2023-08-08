@@ -155,3 +155,45 @@ return (
               </div>
               <br />
               <hr />
+              {/* <------------SELLER'S CONTACT-----------> */}
+              <div className="mb-3">
+                <h4>Your Contact Information</h4>
+                <label htmlFor="sellerName" className="form-label">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  //   onChange={(e) => setSellerName(e.target.value)}
+                  value={sellerName}
+                />
+                {errors.sellerName ? (
+                  <p className="error-message">{errors.sellerName.message}</p>
+                ) : null}
+              </div>
+              <div className="mb-3">
+                <label htmlFor="sellerEmail" className="form-label">
+                  Email Address
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  //   onChange={(e) => setSellerEmail(e.target.value)}
+                  value={sellerEmail}
+                />
+                {errors.sellerEmail ? (
+                  <p className="error-message">{errors.sellerEmail.message}</p>
+                ) : null}
+              </div>
+            </div>
+          </div>
+          <button type="submit" className="button-62">
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default EditPlant;
