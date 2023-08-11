@@ -27,3 +27,25 @@ const UserSchema = new mongoose.Schema({
         minLength:[8, 'Password must be 8 characters']
     }
 }, {timestamps:true})
+
+// * Middleware
+UserSchema.virtual('confirmPassword')
+    .get(() => this.confirmPassword)
+    .set(value => this.confirmPassword = value)
+
+UserSchema.pre('validate', function(next){
+    if(this.password !== this.confirmPassword){
+        this.invalidate('confirmPassword', 'Passwords dont match')
+    }
+    next();
+})
+
+UserSchema.pre('save', function (next) {
+    bcrypt.hash(this.password, 10)
+        .then(hash => {
+            this.password = hash;
+            next();
+        });
+});
+
+module.exports = mongoose.model('User', UserSchema)
