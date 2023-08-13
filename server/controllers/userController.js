@@ -26,3 +26,36 @@ module.exports = {
             res.status(400).json({ error: err })
         }
     },
+    
+    loginUser: async (req, res) => {
+      try{
+          // * check if the user already exists
+          const user = await User.findOne({email:req.body.email})
+          if(user){
+              // * Check to see if the password entered matches the password in the DB for that email specifically the hash
+              const passwordsMatch = await bcrypt.compare(req.body.password, user.password)
+              if(passwordsMatch){
+                  // * generate userToken
+                  const userToken = jwt.sign({_id: user._id}, secret, {expiresIn:'2h'})
+                  // * Log the user in
+                  res.status(201).cookie('userToken', userToken, {httpOnly:true, maxAge:2 * 60 * 60 * 1000}).json(user);
+              }
+              else{
+                  // * This is if the email deos exist but the password dont match
+                  res.status(400).json({ message: 'Invalid email/password'})
+              }
+          }
+          // * if the user doesnt exist
+          else{
+              res.status(400).json({ message: 'Invalid email/password'})
+          }
+      }
+      catch(err){
+          res.status(400).json({ error: err })
+      }
+  },
+
+  logout: (req, res) => {
+      res.clearCookie('userToken').json({message:'You logged out'})
+  }
+}
