@@ -8,3 +8,7 @@ const Login = (props) => {
         email:'',
         password:''
     })
+
+    const changeHandler = (e) => {
+        setUserLogin({...userLogin, [e.target.name]:e.target.value})
+    }
