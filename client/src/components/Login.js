@@ -43,3 +43,17 @@ const Login = (props) => {
                     <p className="text-danger">Password be at least 8 characters</p>
                     ) : null}
                 </div>
+                <br />
+                <div className="container">
+                    <button className="button-62">Sign In</button>
+                </div>
+                <br />
+                <div className="text-center">
+                    <Link className="button-62" to={'/register'}>Would you like to sell your Plants? Register</Link>
+                </div>
+                
+            </form>
+        </div>
+)}
+
+export default Login;
