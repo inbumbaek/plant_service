@@ -17,3 +17,15 @@ const Register = (props) => {
         setUser((prevUser) => ({ ...prevUser, [e.target.name]: e.target.value }))
 
     };
+    const submitHandler = (e) => {
+      e.preventDefault();
+      axios.post('http://localhost:8000/api/register', user, { withCredentials: true })
+          .then((res) => {
+              console.log(res);
+              navigate('/')
+          })
+          .catch((err) => {
+              console.log(err);
+              setErrors(err.response?.data?.errors || {})
+          });
+  };
