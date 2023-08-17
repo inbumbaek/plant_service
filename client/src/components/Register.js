@@ -29,3 +29,12 @@ const Register = (props) => {
               setErrors(err.response?.data?.errors || {})
           });
   };
+  return (
+        <div className="register">
+            <h1 className="text-center">Register</h1>
+            <br />
+            <form onSubmit={submitHandler} className="col-4 mx-auto user-form">
+                <div className="form-group">
+                    <label className='form-label text-dark font-weight-bold'>First Name:</label>
+                    <input type="text" onChange={changeHandler} value={user.firstName} name="firstName" className='form-control' />
+                </div>
