@@ -64,3 +64,13 @@ const Register = (props) => {
                     ) : null}
                         {errors.email ? errors.email.message : null}
                 </div>
+                <div className="form-group">
+                    <label className='form-label text-dark font-weight-bold'>Password:</label>
+                    <input type="password" onChange={changeHandler} value={user.password} name="password" className='form-control' />
+                </div>
+                <div>
+                    {user.password.length < 8 && user.password.length > 0 ? (
+                        <p className="text-danger">Password be at least 8 characters</p>
+                    ) : null}
+                        {errors.password ? errors.password.message : null}
+                </div>
