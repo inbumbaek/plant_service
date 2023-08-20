@@ -44,3 +44,13 @@ const Register = (props) => {
                     ) : null}
                         {errors.firstName ? errors.firstName.message : null}
                 </div>
+                <div className="form-group">
+                    <label className='form-label text-dark font-weight-bold'>Last Name:</label>
+                    <input type="text" onChange={changeHandler} value={user.lastName} name="lastName" className='form-control' />
+                </div>
+                <div>
+                    {user.lastName.length < 2 && user.lastName.length > 0 ? (
+                        <p className="text-danger">Last Name be at least 2 characters</p>
+                    ) : null}
+                        {errors.lastName ? errors.lastName.message : null}
+                </div>
