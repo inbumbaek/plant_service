@@ -54,3 +54,13 @@ const Register = (props) => {
                     ) : null}
                         {errors.lastName ? errors.lastName.message : null}
                 </div>
+                <div className="form-group">
+                    <label className='form-label text-dark font-weight-bold'>Email:</label>
+                    <input type="email" onChange={changeHandler} value={user.email} name="email" className='form-control' />
+                </div>
+                <div>
+                    {user.email.length < 2 && user.email.length > 0 ? (
+                        <p className="text-danger">Email be at least 2 characters</p>
+                    ) : null}
+                        {errors.email ? errors.email.message : null}
+                </div>
