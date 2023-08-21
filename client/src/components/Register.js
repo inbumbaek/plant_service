@@ -84,3 +84,8 @@ const Register = (props) => {
                     ) : null}
                         {errors.confirmPassword ? errors.confirmPassword.message : null}
                 </div>
+                <br />
+                <div className="container">
+                    <button type="submit" className="button-62">Create an account</button>
+                </div>
+            </form>
