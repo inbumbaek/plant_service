@@ -89,3 +89,12 @@ const Register = (props) => {
                     <button type="submit" className="button-62">Create an account</button>
                 </div>
             </form>
+            <br />
+            <div className="text-center">
+                <p>Already have an account? <Link className="button-62" to="/">Log in here</Link></p>
+            </div>
+        </div>
+    );
+};
+
+export default Register;
