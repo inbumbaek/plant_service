@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CreatePlant from "./components/CreatPlant";
+import Dashboard from "./components/Dashboard";
+import EditPlant from "./components/EditPlant";
+import DetailPlant from "./components/DetailPlant";
+import FlippableCard from "./components/FlippableCard";
+import FlipCard from "./components/FlipCard";
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Login/>}/>
+          <Route path='/register' element={<Register/>}/>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/plant/new" element={<CreatePlant />} />
+          <Route path="/plant/:id/edit" element={<EditPlant />} />
+          <Route path="/plant/:id" element={<DetailPlant />} />
+          <Route path="/plant/test" element={<FlippableCard />} />
+          <Route path="/plant/card" element={<FlipCard />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
