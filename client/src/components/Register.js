@@ -98,3 +98,5 @@ const Register = (props) => {
 };
 
 export default Register;
+
+// add css to register page
